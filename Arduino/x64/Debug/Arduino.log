@@ -1,0 +1,9 @@
+﻿  Serial.cpp
+  main.cpp
+H:\MTRN4110\include\SMStruct.h(6): warning C4351: new behavior: elements of array 'Arduino::pin' will be default initialized
+H:\MTRN4110\include\SMStruct.h(12): warning C4351: new behavior: elements of array 'Camera::depth' will be default initialized
+main.cpp(75): warning C4390: ';' : empty controlled statement found; is this the intent?
+  SMObject.cpp
+  SMFcn.cpp
+  Generating Code...
+  Arduino.vcxproj -> H:\MTRN4110\x64\Debug\Arduino.exe

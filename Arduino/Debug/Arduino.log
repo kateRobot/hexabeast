@@ -1,0 +1,23 @@
+﻿Build started 31/03/2017 6:01:05 AM.
+     1>Project "G:\MTRN4110\Arduino\Arduino.vcxproj" on node 3 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IG:\MTRN4110\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\include\SMFcn.cpp ..\include\SMObject.cpp main.cpp Serial.cpp
+         Serial.cpp
+         main.cpp
+     1>g:\mtrn4110\include\smstruct.h(6): warning C4351: new behavior: elements of array 'Arduino::pin' will be default initialized
+     1>g:\mtrn4110\include\smstruct.h(12): warning C4351: new behavior: elements of array 'Camera::depth' will be default initialized
+     1>g:\mtrn4110\arduino\main.cpp(75): warning C4390: ';' : empty controlled statement found; is this the intent?
+         SMObject.cpp
+         SMFcn.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\MTRN4110\Debug\Arduino.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\MTRN4110\Debug\Arduino.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\MTRN4110\Debug\Arduino.lib" /MACHINE:X86 Debug\SMFcn.obj
+         Debug\SMObject.obj
+         Debug\main.obj
+         Debug\Serial.obj
+         Arduino.vcxproj -> G:\MTRN4110\Debug\Arduino.exe
+     1>Done Building Project "G:\MTRN4110\Arduino\Arduino.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:05:46.35
