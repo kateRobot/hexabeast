@@ -1,20 +1,20 @@
-﻿Build started 1/04/2017 12:08:26 AM.
-     1>Project "G:\MTRN4110\ProcessManagement\ProcessManagement.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 1/04/2017 9:10:17 PM.
+     1>Project "C:\Users\Stephen\Desktop\Hexabeast\hexabeast\ProcessManagement\ProcessManagement.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IG:\MTRN4110\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\include\SMFcn.cpp ..\include\SMObject.cpp ProcessManagement.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\include\SMFcn.cpp ..\include\SMObject.cpp ProcessManagement.cpp
          ProcessManagement.cpp
-     1>g:\mtrn4110\include\smstruct.h(6): warning C4351: new behavior: elements of array 'Arduino::pin' will be default initialized
-     1>g:\mtrn4110\include\smstruct.h(12): warning C4351: new behavior: elements of array 'Camera::depth' will be default initialized
+     1>c:\users\stephen\desktop\hexabeast\hexabeast\include\smstruct.h(6): warning C4351: new behavior: elements of array 'Arduino::pin' will be default initialized
+     1>c:\users\stephen\desktop\hexabeast\hexabeast\include\smstruct.h(12): warning C4351: new behavior: elements of array 'Camera::depth' will be default initialized
          SMObject.cpp
          SMFcn.cpp
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\MTRN4110\Debug\ProcessManagement.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\MTRN4110\Debug\ProcessManagement.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\MTRN4110\Debug\ProcessManagement.lib" /MACHINE:X86 Debug\SMFcn.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stephen\Desktop\Hexabeast\hexabeast\Debug\ProcessManagement.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Stephen\Desktop\Hexabeast\hexabeast\Debug\ProcessManagement.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stephen\Desktop\Hexabeast\hexabeast\Debug\ProcessManagement.lib" /MACHINE:X86 Debug\SMFcn.obj
          Debug\SMObject.obj
          Debug\ProcessManagement.obj
-         ProcessManagement.vcxproj -> G:\MTRN4110\Debug\ProcessManagement.exe
-     1>Done Building Project "G:\MTRN4110\ProcessManagement\ProcessManagement.vcxproj" (Rebuild target(s)).
+         ProcessManagement.vcxproj -> C:\Users\Stephen\Desktop\Hexabeast\hexabeast\Debug\ProcessManagement.exe
+     1>Done Building Project "C:\Users\Stephen\Desktop\Hexabeast\hexabeast\ProcessManagement\ProcessManagement.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:27.40
+Time Elapsed 00:00:15.24
