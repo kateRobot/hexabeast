@@ -30,7 +30,7 @@
 #include <SMStruct.h>
 #include <conio.h>
 
-#define NUM_UNITS 2
+#define NUM_UNITS 3
 #define CRITICAL_MASK 62
 #define MAX_HB_COUNT 100
 
@@ -84,7 +84,8 @@ int main()
 	TCHAR* Units[10] = //Max processes is 10
 	{
 		TEXT("Arduino.exe"),
-		TEXT("3D_Camera.exe")//,
+		TEXT("3D_Camera.exe"),
+		TEXT("client.exe")//,
 		//TEXT("Plotting.exe")
 	};
 	//Run all other processes ======
