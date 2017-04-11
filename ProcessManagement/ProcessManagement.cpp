@@ -11,7 +11,8 @@
 //#include <dos.h>
 //#include <stdlib.h>
 //#include <cstdio>
-//#include <tlhelp32.h>
+
+//#include <TlHelp32.h>
 #include <windows.h>
 #include <iostream>
 #include <fstream>
@@ -30,7 +31,7 @@
 #include <SMStruct.h>
 #include <conio.h>
 
-#define NUM_UNITS 3
+#define NUM_UNITS 4
 #define CRITICAL_MASK 62
 #define MAX_HB_COUNT 100
 
@@ -85,7 +86,8 @@ int main()
 	{
 		TEXT("Arduino.exe"),
 		TEXT("3D_Camera.exe"),
-		TEXT("client.exe")//,
+		TEXT("server.exe"),
+		TEXT("client.exe"),
 		//TEXT("Plotting.exe")
 	};
 	//Run all other processes ======

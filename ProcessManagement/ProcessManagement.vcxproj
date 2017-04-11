@@ -26,13 +26,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -125,6 +125,17 @@
     <ClInclude Include="..\include\SMFcn.h" />
     <ClInclude Include="..\include\SMObject.h" />
     <ClInclude Include="..\include\SMStruct.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3D_Camera\3D_Camera.vcxproj">
+      <Project>{2387a113-40b1-460f-9da3-b930f58e293c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Arduino\Arduino.vcxproj">
+      <Project>{8a5c7fbd-0775-406e-b5b4-01916d3ebca2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\client-server-stuff\Server\Server.vcxproj">
+      <Project>{c636e009-332c-47b6-ab40-d36a8d57e394}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

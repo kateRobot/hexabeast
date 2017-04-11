@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3D_Camera", "3D_Camera\3D_Camera.vcxproj", "{2387A113-40B1-460F-9DA3-B930F58E293C}"
 EndProject
@@ -11,6 +11,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProcessManagement", "Proces
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Plotting", "Plotting\Plotting.vcxproj", "{5F00E258-E94C-43C0-A7DE-84507A544519}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "client-server-stuff\Server\Server.vcxproj", "{C636E009-332C-47B6-AB40-D36A8D57E394}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "arduClient", "arduClient\arduClient.vcxproj", "{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cameraClient", "cameraClient\cameraClient.vcxproj", "{22D20031-C111-44A4-849B-BC80B2A6B46E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,10 +25,9 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2387A113-40B1-460F-9DA3-B930F58E293C}.Debug|Win32.ActiveCfg = Debug|Win32
-		{2387A113-40B1-460F-9DA3-B930F58E293C}.Debug|Win32.Build.0 = Debug|Win32
+		{2387A113-40B1-460F-9DA3-B930F58E293C}.Debug|Win32.ActiveCfg = Debug|x64
+		{2387A113-40B1-460F-9DA3-B930F58E293C}.Debug|Win32.Build.0 = Debug|x64
 		{2387A113-40B1-460F-9DA3-B930F58E293C}.Debug|x64.ActiveCfg = Debug|x64
-		{2387A113-40B1-460F-9DA3-B930F58E293C}.Debug|x64.Build.0 = Debug|x64
 		{2387A113-40B1-460F-9DA3-B930F58E293C}.Release|Win32.ActiveCfg = Release|Win32
 		{2387A113-40B1-460F-9DA3-B930F58E293C}.Release|Win32.Build.0 = Release|Win32
 		{2387A113-40B1-460F-9DA3-B930F58E293C}.Release|x64.ActiveCfg = Release|Win32
@@ -48,6 +53,28 @@ Global
 		{5F00E258-E94C-43C0-A7DE-84507A544519}.Release|Win32.Build.0 = Release|Win32
 		{5F00E258-E94C-43C0-A7DE-84507A544519}.Release|x64.ActiveCfg = Release|x64
 		{5F00E258-E94C-43C0-A7DE-84507A544519}.Release|x64.Build.0 = Release|x64
+		{C636E009-332C-47B6-AB40-D36A8D57E394}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C636E009-332C-47B6-AB40-D36A8D57E394}.Debug|Win32.Build.0 = Debug|Win32
+		{C636E009-332C-47B6-AB40-D36A8D57E394}.Debug|x64.ActiveCfg = Debug|Win32
+		{C636E009-332C-47B6-AB40-D36A8D57E394}.Release|Win32.ActiveCfg = Release|Win32
+		{C636E009-332C-47B6-AB40-D36A8D57E394}.Release|Win32.Build.0 = Release|Win32
+		{C636E009-332C-47B6-AB40-D36A8D57E394}.Release|x64.ActiveCfg = Release|Win32
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Debug|Win32.Build.0 = Debug|Win32
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Debug|x64.ActiveCfg = Debug|x64
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Debug|x64.Build.0 = Debug|x64
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Release|Win32.ActiveCfg = Release|Win32
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Release|Win32.Build.0 = Release|Win32
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Release|x64.ActiveCfg = Release|x64
+		{3E8253E5-2A81-4A48-9E81-653D5BCB9BB6}.Release|x64.Build.0 = Release|x64
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Debug|Win32.Build.0 = Debug|Win32
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Debug|x64.ActiveCfg = Debug|x64
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Debug|x64.Build.0 = Debug|x64
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Release|Win32.ActiveCfg = Release|Win32
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Release|Win32.Build.0 = Release|Win32
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Release|x64.ActiveCfg = Release|x64
+		{22D20031-C111-44A4-849B-BC80B2A6B46E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

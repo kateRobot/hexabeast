@@ -77,7 +77,7 @@ void onNewDepthSample(DepthNode node, DepthNode::NewSampleReceivedData data)
 
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {
-					depthMap2D[i][j] = (int) data.depthMap[j + i * 320];
+					depthMap2D[i][j] =  data.depthMap[j + i * 320];
 		}
 	}
 
