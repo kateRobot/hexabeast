@@ -1,18 +1,3 @@
-//#include <windows.h>
-//#include <iostream>
-//#include <fstream>
-//#include <iomanip>
-//#include <math.h>
-//#include <string>
-//#include <stdio.h>
-//#include <conio.h>
-//#include <time.h>
-//#include <tchar.h>
-//#include <dos.h>
-//#include <stdlib.h>
-//#include <cstdio>
-
-//#include <TlHelp32.h>
 #include <windows.h>
 #include <iostream>
 #include <fstream>
@@ -31,7 +16,7 @@
 #include <SMStruct.h>
 #include <conio.h>
 
-#define NUM_UNITS 4
+#define NUM_UNITS 3
 #define CRITICAL_MASK 62
 #define MAX_HB_COUNT 100
 
@@ -86,9 +71,7 @@ int main()
 	{
 		TEXT("Arduino.exe"),
 		TEXT("3D_Camera.exe"),
-		TEXT("server.exe"),
-		TEXT("client.exe"),
-		//TEXT("Plotting.exe")
+		TEXT("TheRealServer.exe")
 	};
 	//Run all other processes ======
 	for (int i = 0; i < NUM_UNITS; i++)
@@ -123,79 +106,8 @@ int main()
 	}
 	cout << "All processes done" << endl;
 	PM->ShutDown.Flags.PM = 0;
-	/*
-	// DO as long as not PM.shutdown
-	while (!PM->ShutDown.Flags.PM == 1)
-	{
-		if (RM->Terminate == 1) {
-			PM->ShutDown.Status = 0xFFFF;
-			break;
-		}
-		cout << PM->HeartBeat.Status << " " << HeartbeatCounter << " " << PM->HeartBeat.Flags.Arduino << " " << PM->HeartBeat.Flags.3D_Camera << endl;
-		// Check heartbeats
-		if ((PM->HeartBeat.Status & CRITICAL_MASK) != CRITICAL_MASK)
-			HeartbeatCounter++;
-		else
-			HeartbeatCounter = 0;
-
-		if (HeartbeatCounter >= MAX_HB_COUNT)
-		{
-			PM->ShutDown.Status = 0xFFFF;
-			//cout << "HeartbeatCounter >= MAX_HB_COUNT" << endl;
-			break;
-		}
-
-		if (PM->HeartBeat.Flags.GPS == 0) 
-		{
-			if (!IsProcessRunning(Units[1]))
-			{
-				cout << "Attempting Restart: " << Units[1] << endl;
-				ZeroMemory(&s[1], sizeof(s[1]));
-				s[1].cb = sizeof(s[1]);
-				ZeroMemory(&p[1], sizeof(p[1]));
-				// Start the child processes.
-
-				if (!CreateProcess(NULL,  // No module name (use command line)
-					Units[1],		// Command line
-					NULL,			// Process handle not inheritable
-					NULL,			// Thread handle not inheritable
-					FALSE,			// Set handle inheritance to FALSE
-					CREATE_NEW_CONSOLE,				// No creation flags
-					NULL,			// Use parent's environment block
-					NULL,			// Use parent's starting directory
-					&s[1],				// Pointer to STARTUPINFO structure
-					&p[1])				// Pointer to PROCESS_INFORMATION structure
-					)
-				{
-					printf("%s failed (%d).\n", Units[1], GetLastError());
-					//_getch();
-				} else {
-					cout << "Successfully Restarted: " << Units[1] << endl;
-				}
-			}
-		}
-
-		// Maintaining watch of heartbeats
-
-		// Force heartbeat to ZERO
-		PM->HeartBeat.Status = 0x00;
-		// Manage shutdown/start up
-		if (_kbhit())
-			break;
-		// Reset PM.Heartbeat
-		PM->HeartBeat.Flags.PM = 1;
-		WatchDog();
-		Sleep(100);
-	}*/
 	
-	/*PM->ShutDown.Status = 0xFFFF;
-	//cout << PM->HeartBeat.Status << " " << PM->ShutDown.Status << " " << HeartbeatCounter << endl;
-	*/
 	_getch();
 
 	return 0;
 }
-/*int WatchDog()
-{
-	return 0;
-}*/

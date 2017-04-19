@@ -1,23 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-// SoftKinetic DepthSense SDK
-//
-// COPYRIGHT AND CONFIDENTIALITY NOTICE - SOFTKINETIC CONFIDENTIAL
-// INFORMATION
-//
-// All rights reserved to SOFTKINETIC SENSORS NV (a
-// company incorporated and existing under the laws of Belgium, with
-// its principal place of business at Boulevard de la Plainelaan 11,
-// 1050 Brussels (Belgium), registered with the Crossroads bank for
-// enterprises under company number 0811 341 454 - "Softkinetic
-// Sensors").
-//
-// The source code of the SoftKinetic DepthSense Camera Drivers is
-// proprietary and confidential information of Softkinetic Sensors NV.
-//
-// For any question about terms and conditions, please contact:
-// info@softkinetic.com Copyright (c) 2002-2015 Softkinetic Sensors NV
-////////////////////////////////////////////////////////////////////////////////
-
 #ifdef _MSC_VER
 #include <windows.h>
 #endif
@@ -28,9 +8,14 @@
 
 #include <DepthSense.hxx>
 
-#include <SMObject.h>
-#include <SMStruct.h>
 #include <conio.h>
+
+#include <iostream>
+#include <fstream>
+
+#include "../include/SMObject.h"
+#include "../include/SMStruct.h"
+
 
 #define HEIGHT			240
 #define WIDTH			320
@@ -59,45 +44,19 @@ void onNewDepthSample(DepthNode node, DepthNode::NewSampleReceivedData data)
 	CameraObj.SMAccess();
 	PMObj.SMAccess();
 
-	//HWND hWnd = GetConsoleWindow();
-	//ShowWindow(hWnd, SW_HIDE);// SW_SHOWMINIMIZED);//SW_SHOW, SW_HIDE
-
+	
 	ProcessManagement* PM = (ProcessManagement*)PMObj.pData;
 	Camera* pCamera = (Camera*)CameraObj.pData;
 
-	//PM->ShutDown.Flags.Camera = 0;
+	PM->ShutDown.Flags.Camera = 0;
 
-	/*for (int i = 0; i < HEIGHT*WIDTH; i++) {
-	printf("Z#%u: %d\n", g_dFrames, data.depthMap[i]);
-	printf("Size = %d\n", sizeof(data.depthMap));
-	printf("i = %d\n", i);
-	}*/
-	int newframe[NEW_HEIGHT][NEW_WIDTH];
-	int depthMap2D[HEIGHT][WIDTH];
-
-	for (int i = 0; i < HEIGHT; i++) {
-		for (int j = 0; j < WIDTH; j++) {
-					depthMap2D[i][j] =  data.depthMap[j + i * 320];
-		}
+	for (int i = 0; i < 76800; i++) {
+		pCamera->verticesX[i] = (short)data.vertices[i].x;
+		pCamera->verticesY[i] = (short)data.vertices[i].y;
+		pCamera->verticesZ[i] = (short)data.vertices[i].z;
 	}
-
 	printf("%d \n", g_dFrames);
 
-	for (int i = 0; i < NEW_HEIGHT; i++) {
-		for (int j = 0; j < NEW_WIDTH; j++) {
-			newframe[i][j] = (depthMap2D[i * 2][j * 2] + depthMap2D[i * 2 + 1][j * 2] + depthMap2D[i * 2][j * 2 + 1] + depthMap2D[i * 2 + 1][j * 2 + 1]) / 4;
-		}
-	}
-	
-	for (int i = 0; i < NEW_HEIGHT; i++) {
-		for (int j = 0; j < NEW_WIDTH; j++) {
-			pCamera->depth[i][j] = newframe[i][j]; // from documentation: The depth map in fixed point format. This map represents the cartesian depth of each pixel, expressed in millimeters. Valid values lies in the range [0 - 31999]. Saturated pixels are given the special value 32002.
-		}
-	}
-
-	pCamera->frame = (double) g_dFrames;
-
-	// Project some 3D points in the Color Frame
 	if (!g_pProjHelper)
 	{
 		g_pProjHelper = new ProjectionHelper(data.stereoCameraParameters);
@@ -109,28 +68,12 @@ void onNewDepthSample(DepthNode node, DepthNode::NewSampleReceivedData data)
 		g_scp = data.stereoCameraParameters;
 	}
 
-	/*int32_t w, h;
-	FrameFormat_toResolution(data.captureConfiguration.frameFormat, &w, &h);
-	int cx = w / 2;
-	int cy = h / 2;
-
-	Vertex p3DPoints[4];
-
-	p3DPoints[0] = data.vertices[(cy-h/4)*w+cx-w/4];
-	p3DPoints[1] = data.vertices[(cy-h/4)*w+cx+w/4];
-	p3DPoints[2] = data.vertices[(cy+h/4)*w+cx+w/4];
-	p3DPoints[3] = data.vertices[(cy+h/4)*w+cx-w/4];
-	
-	Point2D p2DPoints[4];
-	g_pProjHelper->get2DCoordinates ( p3DPoints, p2DPoints, 4, CAMERA_PLANE_COLOR);
-	*/
-
-	g_dFrames++;
+		g_dFrames++;
 	Sleep(500); //Transmitted frame rate 2Hz 
 	// Quit the main loop after 200 depth frames received
-	if (g_dFrames == 200000000000000){// || _kbhit()) {
-		PM->HeartBeat.Flags.Arduino = 1;
+	if (_kbhit()) {
 		g_context.quit();
+
 	}
 
 }
@@ -146,9 +89,8 @@ void configureDepthNode()
 	config.mode = DepthNode::CAMERA_MODE_CLOSE_MODE;
 	config.saturation = true;
 
-	//g_dnode.setEnableVertices(true);
-	g_dnode.setEnableDepthMap(true);
-
+	g_dnode.setEnableVertices(true);
+	
 	try
 	{
 		g_context.requestControl(g_dnode, 0);
@@ -269,3 +211,4 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
+

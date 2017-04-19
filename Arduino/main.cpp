@@ -11,14 +11,10 @@
 #include <iostream>
 #include <fstream>
 #include <tchar.h>
-#include "SerialClass.h"	// Library described above
+#include "SerialClass.h"
 #include <SMObject.h>
 #include <SMStruct.h>
 #include <conio.h>
-//#include "arduino.h"
-
-//#define IP_ADDRESS "192.168.1.200"
-//#define DEFAULT_PORT "24000"
 
 using namespace std;
 
@@ -35,16 +31,9 @@ int main()
 	PMObj.SMAccess();
 	
 
-	//HWND hWnd = GetConsoleWindow();
-	//ShowWindow(hWnd, SW_HIDE);// SW_SHOWMINIMIZED);//SW_SHOW, SW_HIDE
-
 	ProcessManagement* PM = (ProcessManagement*)PMObj.pData;
 	Arduino* pArduino = (Arduino*)ArduinoObj.pData;
-	//Microprocessor analogInput;
-	Serial* SP = new Serial("\\\\.\\COM4");    // adjust as needed
-
-											   //if (SP->IsConnected())
-											   //printf("We're connected\n");
+	Serial* SP = new Serial("\\\\.\\COM4");
 
 
 	PM->ShutDown.Flags.Arduino = 0;
@@ -54,18 +43,13 @@ int main()
 		if (SP->IsConnected()) {
 			connection = true;
 		}
-		//printf("Welcome to the serial test app!\n\n");
-
-		char incomingData[256] = "";			// don't forget to pre-allocate memory
-												//printf("%s\n",incomingData);
+		
+		char incomingData[256] = "";			
 		int dataLength = 255;
 		int readResult = 0;
 
-		//ArduinoData ArduinoRecord;
-
 		while (connection != 0) {
 			readResult = SP->ReadData(incomingData, dataLength);
-			// printf("Bytes read: (0 means no data available) %i\n",readResult);
 			incomingData[readResult] = 0;
 			istringstream iss(incomingData);
 
@@ -93,7 +77,6 @@ int main()
 		PM->HeartBeat.Flags.Arduino = 1;
 		if (_kbhit())
 			break;
-		//Sleep(500);
 }
 
 	return 0;

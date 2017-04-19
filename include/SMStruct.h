@@ -9,8 +9,9 @@ struct Arduino
 
 struct Camera
 {
-	short depth[120][160] = {};
-	double frame = 0;
+	short verticesX[76800] = {};
+	short verticesY[76800] = {};
+	short verticesZ[76800] = {};
 };
 
 

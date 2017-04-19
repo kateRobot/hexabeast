@@ -18,13 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Serial.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\include\SMFcn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\include\SMObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Serial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
